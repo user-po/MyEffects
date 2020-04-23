@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Moon Light Parallax Effects | Vanilla JavaScript</title>
+    <link rel="stylesheet" href="css/parallax.css">
+</head>
+
+<body>
+    <section>
+        <img src="images/bg1.jpg" id="bg">
+        <img src="images/moon.png" id="moon">
+        <img src="images/mountain.png" id="mountain">
+        <img src="images/road.png" id="road">
+        <h2 id="text">
+            Moon Light
+        </h2>
+    </section>
+</body>
+<script>
+    let bg = document.querySelector('#bg')
+    let moon = document.querySelector('#moon')
+    let mountain = document.querySelector('#mountain')
+    let road = document.querySelector('#road')
+    let text = document.querySelector('#text')
+
+    window.addEventListener('scroll', () => {
+        var value = window.scrollY;
+
+        bg.style.top = value * 0.5 + 'px';
+        moon.style.left = -value * 0.5 + 'px';
+        mountain.style.top = -value * 0.15 + 'px';
+        road.style.top = value * 0.15 + 'px';
+
+        text.style.top = value * 1 + 'px';
+
+
+    })
+
+</script>
+
+</html>
